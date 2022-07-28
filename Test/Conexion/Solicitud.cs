@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -11,8 +12,8 @@ namespace Test.Conexion
           
    public class Solicitud
     {
-           public string urlGeneral = "http://localhost:23792/api/";                       
-           public string Method { get; set; }
+           public string urlGeneral = ConfigurationSettings.AppSettings["Api"];
+        public string Method { get; set; }
            public string Id { get; set; }
            public string Json { get; set; }
            public string Control { get; set; }

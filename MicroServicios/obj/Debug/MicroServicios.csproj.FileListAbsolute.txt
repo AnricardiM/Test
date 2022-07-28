@@ -70,6 +70,6 @@ C:\ProyectosVS\Prueba\Test\MicroServicios\bin\es\System.Web.Razor.resources.dll
 C:\ProyectosVS\Prueba\Test\MicroServicios\bin\es\System.Web.WebPages.resources.dll
 C:\ProyectosVS\Prueba\Test\MicroServicios\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\ProyectosVS\Prueba\Test\MicroServicios\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\ProyectosVS\Prueba\Test\MicroServicios\obj\Debug\MicroServicios.csprojResolveAssemblyReference.cache
 C:\ProyectosVS\Prueba\Test\MicroServicios\obj\Debug\MicroServicios.dll
 C:\ProyectosVS\Prueba\Test\MicroServicios\obj\Debug\MicroServicios.pdb
-C:\ProyectosVS\Prueba\Test\MicroServicios\obj\Debug\MicroServicios.csprojResolveAssemblyReference.cache
