@@ -57,6 +57,7 @@
     </Compile>
     <Compile Include="Model\Auto.cs" />
     <Compile Include="Model\Centro.cs" />
+    <Compile Include="Model\Dashboard.cs" />
     <Compile Include="Model\Venta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

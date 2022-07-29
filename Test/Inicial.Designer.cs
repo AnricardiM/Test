@@ -47,30 +47,24 @@
             this.lbl_IC = new System.Windows.Forms.Label();
             this.lbl_IA = new System.Windows.Forms.Label();
             this.pl_dashboard = new System.Windows.Forms.Panel();
-            this.lbl_PC1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.dgv_lcm = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.dgv_lcdv = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_TNV = new System.Windows.Forms.Label();
-            this.lbl_TC4 = new System.Windows.Forms.Label();
-            this.lbl_TC3 = new System.Windows.Forms.Label();
-            this.lbl_TC2 = new System.Windows.Forms.Label();
-            this.lbl_TC1 = new System.Windows.Forms.Label();
             this.lbl_TV = new System.Windows.Forms.Label();
             this.lbl_LV = new System.Windows.Forms.Label();
             this.pl_centro = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pl_auto = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbl_PC2 = new System.Windows.Forms.Label();
-            this.lbl_PC3 = new System.Windows.Forms.Label();
-            this.lbl_PC4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_auto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_centro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_venta)).BeginInit();
             this.pl_venta.SuspendLayout();
             this.pl_dashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lcm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lcdv)).BeginInit();
             this.pl_centro.SuspendLayout();
             this.pl_auto.SuspendLayout();
             this.SuspendLayout();
@@ -148,9 +142,9 @@
             // dgv_venta
             // 
             this.dgv_venta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_venta.Location = new System.Drawing.Point(9, 198);
+            this.dgv_venta.Location = new System.Drawing.Point(9, 257);
             this.dgv_venta.Name = "dgv_venta";
-            this.dgv_venta.Size = new System.Drawing.Size(387, 187);
+            this.dgv_venta.Size = new System.Drawing.Size(387, 128);
             this.dgv_venta.TabIndex = 7;
             // 
             // cbx_auto
@@ -236,7 +230,6 @@
             this.pl_venta.Name = "pl_venta";
             this.pl_venta.Size = new System.Drawing.Size(407, 401);
             this.pl_venta.TabIndex = 15;
-            this.pl_venta.Paint += new System.Windows.Forms.PaintEventHandler(this.pl_venta_Paint);
             // 
             // lbl_IC
             // 
@@ -256,19 +249,11 @@
             // 
             // pl_dashboard
             // 
-            this.pl_dashboard.Controls.Add(this.lbl_PC4);
-            this.pl_dashboard.Controls.Add(this.lbl_PC3);
-            this.pl_dashboard.Controls.Add(this.lbl_PC2);
-            this.pl_dashboard.Controls.Add(this.lbl_PC1);
-            this.pl_dashboard.Controls.Add(this.label6);
-            this.pl_dashboard.Controls.Add(this.label5);
+            this.pl_dashboard.Controls.Add(this.dgv_lcm);
             this.pl_dashboard.Controls.Add(this.label4);
+            this.pl_dashboard.Controls.Add(this.dgv_lcdv);
             this.pl_dashboard.Controls.Add(this.label3);
             this.pl_dashboard.Controls.Add(this.lbl_TNV);
-            this.pl_dashboard.Controls.Add(this.lbl_TC4);
-            this.pl_dashboard.Controls.Add(this.lbl_TC3);
-            this.pl_dashboard.Controls.Add(this.lbl_TC2);
-            this.pl_dashboard.Controls.Add(this.lbl_TC1);
             this.pl_dashboard.Controls.Add(this.lbl_TV);
             this.pl_dashboard.Controls.Add(this.lbl_LV);
             this.pl_dashboard.Controls.Add(this.dgv_venta);
@@ -277,60 +262,41 @@
             this.pl_dashboard.Size = new System.Drawing.Size(407, 407);
             this.pl_dashboard.TabIndex = 16;
             // 
-            // lbl_PC1
+            // dgv_lcm
             // 
-            this.lbl_PC1.AutoSize = true;
-            this.lbl_PC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PC1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lbl_PC1.Location = new System.Drawing.Point(3, 59);
-            this.lbl_PC1.Name = "lbl_PC1";
-            this.lbl_PC1.Size = new System.Drawing.Size(41, 13);
-            this.lbl_PC1.TabIndex = 19;
-            this.lbl_PC1.Text = "label1";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Blue;
-            this.label6.Location = new System.Drawing.Point(198, 121);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "label1";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(198, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "label1";
+            this.dgv_lcm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_lcm.Location = new System.Drawing.Point(9, 144);
+            this.dgv_lcm.Name = "dgv_lcm";
+            this.dgv_lcm.Size = new System.Drawing.Size(387, 91);
+            this.dgv_lcm.TabIndex = 18;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Blue;
-            this.label4.Location = new System.Drawing.Point(3, 121);
+            this.label4.Location = new System.Drawing.Point(11, 128);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "label1";
+            this.label4.Size = new System.Drawing.Size(150, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Listado Centro y Modelos";
+            // 
+            // dgv_lcdv
+            // 
+            this.dgv_lcdv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_lcdv.Location = new System.Drawing.Point(9, 18);
+            this.dgv_lcdv.Name = "dgv_lcdv";
+            this.dgv_lcdv.Size = new System.Drawing.Size(387, 91);
+            this.dgv_lcdv.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(3, 37);
+            this.label3.Location = new System.Drawing.Point(13, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(249, 13);
             this.label3.TabIndex = 15;
-            this.label3.Text = "label1";
+            this.label3.Text = "Listado de Centros de Distribucion y Venta";
             // 
             // lbl_TNV
             // 
@@ -342,50 +308,6 @@
             this.lbl_TNV.Size = new System.Drawing.Size(41, 13);
             this.lbl_TNV.TabIndex = 14;
             this.lbl_TNV.Text = "label1";
-            // 
-            // lbl_TC4
-            // 
-            this.lbl_TC4.AutoSize = true;
-            this.lbl_TC4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TC4.ForeColor = System.Drawing.Color.Green;
-            this.lbl_TC4.Location = new System.Drawing.Point(198, 98);
-            this.lbl_TC4.Name = "lbl_TC4";
-            this.lbl_TC4.Size = new System.Drawing.Size(41, 13);
-            this.lbl_TC4.TabIndex = 13;
-            this.lbl_TC4.Text = "label1";
-            // 
-            // lbl_TC3
-            // 
-            this.lbl_TC3.AutoSize = true;
-            this.lbl_TC3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TC3.ForeColor = System.Drawing.Color.Green;
-            this.lbl_TC3.Location = new System.Drawing.Point(198, 15);
-            this.lbl_TC3.Name = "lbl_TC3";
-            this.lbl_TC3.Size = new System.Drawing.Size(41, 13);
-            this.lbl_TC3.TabIndex = 12;
-            this.lbl_TC3.Text = "label1";
-            // 
-            // lbl_TC2
-            // 
-            this.lbl_TC2.AutoSize = true;
-            this.lbl_TC2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TC2.ForeColor = System.Drawing.Color.Green;
-            this.lbl_TC2.Location = new System.Drawing.Point(3, 98);
-            this.lbl_TC2.Name = "lbl_TC2";
-            this.lbl_TC2.Size = new System.Drawing.Size(41, 13);
-            this.lbl_TC2.TabIndex = 11;
-            this.lbl_TC2.Text = "label1";
-            // 
-            // lbl_TC1
-            // 
-            this.lbl_TC1.AutoSize = true;
-            this.lbl_TC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TC1.ForeColor = System.Drawing.Color.Green;
-            this.lbl_TC1.Location = new System.Drawing.Point(3, 15);
-            this.lbl_TC1.Name = "lbl_TC1";
-            this.lbl_TC1.Size = new System.Drawing.Size(41, 13);
-            this.lbl_TC1.TabIndex = 10;
-            this.lbl_TC1.Text = "label1";
             // 
             // lbl_TV
             // 
@@ -402,7 +324,7 @@
             // 
             this.lbl_LV.AutoSize = true;
             this.lbl_LV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LV.Location = new System.Drawing.Point(13, 182);
+            this.lbl_LV.Location = new System.Drawing.Point(12, 242);
             this.lbl_LV.Name = "lbl_LV";
             this.lbl_LV.Size = new System.Drawing.Size(103, 13);
             this.lbl_LV.TabIndex = 8;
@@ -446,40 +368,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Listado de Autos";
             // 
-            // lbl_PC2
-            // 
-            this.lbl_PC2.AutoSize = true;
-            this.lbl_PC2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PC2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lbl_PC2.Location = new System.Drawing.Point(3, 146);
-            this.lbl_PC2.Name = "lbl_PC2";
-            this.lbl_PC2.Size = new System.Drawing.Size(41, 13);
-            this.lbl_PC2.TabIndex = 20;
-            this.lbl_PC2.Text = "label1";
-            // 
-            // lbl_PC3
-            // 
-            this.lbl_PC3.AutoSize = true;
-            this.lbl_PC3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PC3.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lbl_PC3.Location = new System.Drawing.Point(198, 59);
-            this.lbl_PC3.Name = "lbl_PC3";
-            this.lbl_PC3.Size = new System.Drawing.Size(41, 13);
-            this.lbl_PC3.TabIndex = 21;
-            this.lbl_PC3.Text = "label1";
-            this.lbl_PC3.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // lbl_PC4
-            // 
-            this.lbl_PC4.AutoSize = true;
-            this.lbl_PC4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PC4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lbl_PC4.Location = new System.Drawing.Point(198, 146);
-            this.lbl_PC4.Name = "lbl_PC4";
-            this.lbl_PC4.Size = new System.Drawing.Size(41, 13);
-            this.lbl_PC4.TabIndex = 22;
-            this.lbl_PC4.Text = "label1";
-            // 
             // Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,10 +378,10 @@
             this.Controls.Add(this.btn_CD);
             this.Controls.Add(this.btn_MA);
             this.Controls.Add(this.Lbl_Mensaje);
-            this.Controls.Add(this.pl_venta);
-            this.Controls.Add(this.pl_centro);
             this.Controls.Add(this.pl_dashboard);
             this.Controls.Add(this.pl_auto);
+            this.Controls.Add(this.pl_venta);
+            this.Controls.Add(this.pl_centro);
             this.Name = "Inicial";
             this.Text = "Fabrica - Test";
             this.Load += new System.EventHandler(this.Inicial_Load);
@@ -504,6 +392,8 @@
             this.pl_venta.PerformLayout();
             this.pl_dashboard.ResumeLayout(false);
             this.pl_dashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lcm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lcdv)).EndInit();
             this.pl_centro.ResumeLayout(false);
             this.pl_centro.PerformLayout();
             this.pl_auto.ResumeLayout(false);
@@ -536,23 +426,15 @@
         private System.Windows.Forms.Panel pl_auto;
         private System.Windows.Forms.Label lbl_TV;
         private System.Windows.Forms.Label lbl_LV;
-        private System.Windows.Forms.Label lbl_TC2;
-        private System.Windows.Forms.Label lbl_TC3;
-        private System.Windows.Forms.Label lbl_TC4;
         private System.Windows.Forms.Label lbl_IA;
         private System.Windows.Forms.Label lbl_IC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_TNV;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgv_lcdv;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_TC1;
-        private System.Windows.Forms.Label lbl_PC1;
-        private System.Windows.Forms.Label lbl_PC4;
-        private System.Windows.Forms.Label lbl_PC3;
-        private System.Windows.Forms.Label lbl_PC2;
+        private System.Windows.Forms.DataGridView dgv_lcm;
+        private System.Windows.Forms.Label label4;
     }
 }
 

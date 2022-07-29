@@ -34,11 +34,11 @@ namespace Test.Funciones
             }
         }
 
-        public List<Venta> ConvertirVenta(string data)
+        public List<Dashboard> ConvertirDashboard(string data)
         {
             try
             {
-                List<Venta> Lista = new JavaScriptSerializer().Deserialize<List<Venta>>(data);
+                List<Dashboard> Lista = new JavaScriptSerializer().Deserialize<List<Dashboard>>(data);
                 return Lista;
             }
             catch
@@ -46,6 +46,8 @@ namespace Test.Funciones
                 return null;
             }
         }
+
+
 
         public string SerializarVenta(Venta listVenta)
         {

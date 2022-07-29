@@ -139,7 +139,18 @@ namespace Test.Conexion
 
             return http.Llamada();
         }
-    
-}
+
+        /// <summary>
+        /// Delete class
+        /// </summary>
+        public Respuesta Count(string control)
+        {
+            http.Method = "GET";
+            http.Control = control;
+          
+            return http.Llamada();
+        }
+
+    }
 }
 

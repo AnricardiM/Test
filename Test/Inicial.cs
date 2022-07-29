@@ -140,64 +140,74 @@ namespace Test
 
         private void btn_DB_Click(object sender, EventArgs e)
         {
-            pl_auto.Visible = false;
-            pl_centro.Visible = false;
-            pl_dashboard.Visible = true;
-            pl_venta.Visible = false;
-            var respuesta = aux.GetAll("venta");
-            var listventa = funcion.ConvertirVenta(respuesta.responseBody);
+            try {
 
-             respuesta = aux.GetAll("centro");
-            var listcentro = funcion.ConvertirCentro(respuesta.responseBody);
+                pl_auto.Visible = false;
+                pl_centro.Visible = false;
+                pl_dashboard.Visible = true;
+                pl_venta.Visible = false;
+                var respuesta = aux.Count("dashboard");
+                var listventa = funcion.ConvertirDashboard(respuesta.responseBody);
+                int cantidad = listventa.Count();
 
-            respuesta = aux.GetAll("auto");
-            var listautos = funcion.ConvertirAuto(respuesta.responseBody);
+                var listcentro = new List<MostrarDatos>();
+                var listcentro2 = new List<MostrarDatos>();
+                lbl_TV.Text = "Total Importe: U$S" + listventa.Sum(x => x.Monto).ToString();
+                lbl_TNV.Text = "Cantidad : " + cantidad.ToString();
 
-            var nuevalist = listventa.Select(x => new {
-              Vehiculo = listautos.First(y => y.idAuto == x.idAuto).descripcionAuto,
-              CentroDeVenta = listcentro.First(y => y.idCentro == x.idCentro).descripcionCentro,
-              Descripcion = x.descripcionVenta,
-              Monto = listautos.First(y => y.idAuto == x.idAuto).costoAuto,
-              x.idCentro
-            }).ToList();
+                foreach (var item in listventa.GroupBy(x => x.idCentro)) {
+                    var md = new MostrarDatos();                   
+                    md.Centro = item.FirstOrDefault().CentroDeVenta;
+                    md.Importe = "U$S " + item.Sum(x=>x.Monto).ToString();
+                    md.Cantidad = item.Count().ToString();
+                    md.Porcentaje = (int.Parse(md.Cantidad) * 100 / cantidad).ToString() + "%";
 
-                        
-            dgv_venta.DataSource = nuevalist;
-            dgv_venta.Refresh();
+                    listcentro.Add(md);
+                }
 
-            int cantidad = nuevalist.Count();
-            int c1 = nuevalist.Count(x => x.idCentro == 1);
-            int c2 = nuevalist.Count(x => x.idCentro == 2);
-            int c3 = nuevalist.Count(x => x.idCentro == 3);
-            int c4 = nuevalist.Count(x => x.idCentro == 4);
 
-            lbl_TV.Text = "Total Importe: U$S" + nuevalist.Sum(x => x.Monto).ToString(); 
-            lbl_TNV.Text = "Cantidad : " + cantidad.ToString(); 
+                foreach (var item in listventa.GroupBy(x => x.idCentro & x.idVehiculo))
+                {
+                    var md = new MostrarDatos();
+                    md.Centro = item.FirstOrDefault().CentroDeVenta;
+                    md.Vehiculo = item.FirstOrDefault().Vehiculo;
+                    md.Importe = "U$S " + item.Sum(x => x.Monto).ToString();
+                    md.Cantidad = item.Count().ToString();
+                    md.Porcentaje = (int.Parse(md.Cantidad) * 100 / cantidad).ToString() + "%";
 
-            lbl_TC1.Text = "Total C1: U$S" + nuevalist.Where(x => x.idCentro == 1).Sum(x=>x.Monto).ToString(); 
-            lbl_TC2.Text = "Total C2: U$S" + nuevalist.Where(x => x.idCentro == 2).Sum(x => x.Monto).ToString();
-            lbl_TC3.Text = "Total C3: U$S" + nuevalist.Where(x => x.idCentro == 3).Sum(x => x.Monto).ToString(); 
-            lbl_TC4.Text = "Total C4: U$S" + nuevalist.Where(x => x.idCentro == 4).Sum(x => x.Monto).ToString();
+                    listcentro2.Add(md);
+                }
 
-            label3.Text = "Cantidad C1: " + c1.ToString();
-            label4.Text = "Cantidad C2: " + c2.ToString();
-            label5.Text = "Cantidad C3: " + c3.ToString();
-            label6.Text = "Cantidad C4: " + c4.ToString();
 
-            lbl_PC1.Text = "C1: " + (c1*100/cantidad).ToString() +"%";
-            lbl_PC2.Text = "C2: " + (c2 * 100 / cantidad).ToString() + "%";
-            lbl_PC3.Text = "C3: " + (c3 * 100 / cantidad).ToString() + "%";
-            lbl_PC4.Text = "C4: " + (c4 * 100 / cantidad).ToString() + "%";
+                dgv_lcdv.DataSource = listcentro;
+                dgv_lcdv.Columns[4].Visible = false;
+                dgv_lcdv.Refresh();
+
+                dgv_lcm.DataSource = listcentro2;
+                dgv_lcm.Refresh();
+
+                dgv_venta.DataSource = listventa;
+                dgv_venta.Columns[4].Visible = false;
+                dgv_venta.Columns[5].Visible = false;
+                dgv_venta.Refresh();
+
+            }
+            catch (Exception ex) {
+
+                Lbl_Mensaje.ForeColor = Color.Red;
+                Lbl_Mensaje.Text = ex.Message;
+            }
+
+           
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
+         }
 
-        }
-
-        private void pl_venta_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+    class MostrarDatos {
+        public string Centro { get; set; }
+        public string Importe { get; set; }
+        public string Cantidad { get; set; }
+        public string Porcentaje { get; set; }
+        public string Vehiculo { get; set; }
     }
 }

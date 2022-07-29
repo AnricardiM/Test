@@ -195,6 +195,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AutoController.cs" />
     <Compile Include="Controllers\CentroController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VentaController.cs" />
     <Compile Include="Global.asax.cs">

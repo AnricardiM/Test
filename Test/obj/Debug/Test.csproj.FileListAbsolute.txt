@@ -1,7 +1,6 @@
 C:\ProyectosVS\Prueba\Test\Test\bin\Debug\Test.exe.config
 C:\ProyectosVS\Prueba\Test\Test\bin\Debug\Test.exe
 C:\ProyectosVS\Prueba\Test\Test\bin\Debug\Test.pdb
-C:\ProyectosVS\Prueba\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\ProyectosVS\Prueba\Test\Test\obj\Debug\Test.Inicial.resources
 C:\ProyectosVS\Prueba\Test\Test\obj\Debug\Test.Properties.Resources.resources
 C:\ProyectosVS\Prueba\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
